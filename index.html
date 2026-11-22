@@ -168,7 +168,7 @@ body.no-pending .pending,body.no-pending .pending-only{display:none}
 }
 .names .n:first-child{transform:translateX(-9%)}
 .names .n:last-child{transform:translateX(9%)}
-.names .amp{font-size:.6em;line-height:1;color:var(--teal);margin:2px 0 -4px;position:relative;z-index:1}
+.names .amp{font:normal 500 .62em/1 'Cormorant Garamond',Georgia,serif;color:var(--teal);margin:2px 0 0;position:relative;z-index:1}
 .hero__date{font:500 15px/1 'Jost',sans-serif;letter-spacing:.34em;text-transform:uppercase;color:var(--body);padding-left:.34em}
 .countdown{display:flex;justify-content:center;gap:8px;margin:22px auto 20px}
 .cd{
@@ -189,7 +189,7 @@ body.no-pending .pending,body.no-pending .pending-only{display:none}
 @media (min-width:640px){
   .names{flex-direction:row;justify-content:center;align-items:baseline;gap:.12em;font-size:clamp(96px,11vw,132px)}
   .names .n:first-child,.names .n:last-child{transform:none}
-  .names .amp{margin:0;font-size:.62em}
+  .names .amp{margin:0;font-size:.6em}
   .hero::before{inset:22px}.hero::after{inset:30px}
   .botan--tl{top:30px;left:30px}.botan--br{bottom:30px;right:30px}
 }
@@ -278,6 +278,7 @@ body.no-pending .pending,body.no-pending .pending-only{display:none}
 /* ===================== FOOTER ===================== */
 footer{padding:62px 0 calc(110px + env(safe-area-inset-bottom,0px));text-align:center;background:linear-gradient(180deg,#fff 0%,var(--sky) 100%)}
 footer .mono{font:400 56px/1 'Great Vibes',cursive;color:var(--teal-deep)}
+footer .mono .amp{font:normal 500 .72em/1 'Cormorant Garamond',Georgia,serif;color:var(--teal);margin:0 .18em;vertical-align:.04em}
 footer .sign{margin-top:12px;font-size:15px;color:var(--body)}
 footer .paw{width:20px;height:20px;color:var(--teal);display:inline-block;vertical-align:-3px;margin:0 3px}
 footer .date{margin-top:10px;font:500 12px/1 'Jost',sans-serif;letter-spacing:.3em;color:var(--muted)}
@@ -304,7 +305,7 @@ footer .date{margin-top:10px;font:500 12px/1 'Jost',sans-serif;letter-spacing:.3
 }
 @keyframes ring{0%{transform:scale(.8);opacity:.7}100%{transform:scale(1.35);opacity:0}}
 .music__hint{
-  background:#fff;color:var(--ink);font:500 12.5px/1.3 'Jost',sans-serif;padding:9px 14px;border-radius:999px;white-space:nowrap;
+  background:#fff;color:var(--ink);font:500 12.5px/1.35 'Jost',sans-serif;padding:9px 14px;border-radius:18px;max-width:min(250px,calc(100vw - 110px));text-align:left;
   box-shadow:0 10px 24px -10px rgba(22,48,60,.5);opacity:0;transform:translateX(8px);pointer-events:none;transition:opacity .5s ease,transform .5s ease;
 }
 .music.show-hint .music__hint{opacity:1;transform:none}
@@ -436,7 +437,7 @@ footer .date{margin-top:10px;font:500 12px/1 'Jost',sans-serif;letter-spacing:.3
         <h3>Salón Monet</h3>
         <p class="addr">Villa Nueva, Córdoba</p>
         <p class="time">19:30<small>hs</small></p>
-        <p class="note">Ceremonia civil. Después, recepción y fiesta.</p>
+        <p class="note">Civil, recepción y fiesta.</p>
         <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=-32.4413778,-63.2375987" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
           Cómo llegar
@@ -467,12 +468,10 @@ footer .date{margin-top:10px;font:500 12px/1 'Jost',sans-serif;letter-spacing:.3
     <p class="song-sub reveal">(Everything I Do) I Do It For You<small>Bryan Adams</small></p>
     <div class="player metal-card reveal">
       <div class="player__frame">
-        <div id="ytPlayer"><a class="player__fallback" id="ytFallback" href="https://www.youtube.com/watch?v=9bXJ-czYHnA" target="_blank" rel="noopener">▶ Escuchar en YouTube</a></div>
+        <div id="ytPlayer"><a class="player__fallback" id="ytFallback" href="https://www.youtube.com/watch?v=Y0pdQU87dc8" target="_blank" rel="noopener">▶ Escuchar en YouTube</a></div>
       </div>
     </div>
-    <p class="song-note">También podés escucharla de fondo mientras recorrés la invitación con el botón de música ♪</p>
-    <div class="pending song-pending">Confirmar que este sea el video/versión que quieren (link de YouTube)</div>
-  </div>
+    <p class="song-note">También podés escucharla de fondo mientras recorrés la invitación con el botón de música ♪</p>  </div>
 </section>
 
 <!-- ===================== REGALOS (pendiente) ===================== -->
@@ -515,7 +514,7 @@ footer .date{margin-top:10px;font:500 12px/1 'Jost',sans-serif;letter-spacing:.3
 </section>
 
 <footer>
-  <div class="mono">J &amp; F</div>
+  <div class="mono" aria-label="J y F">J<span class="amp">&amp;</span>F</div>
   <p class="sign">Con amor, Jessi, Fabri y Teo
     <svg class="paw" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="12" cy="16.5" rx="5" ry="4"/><ellipse cx="5.2" cy="11" rx="2" ry="2.7"/><ellipse cx="9.3" cy="6.6" rx="2" ry="2.8"/><ellipse cx="14.7" cy="6.6" rx="2" ry="2.8"/><ellipse cx="18.8" cy="11" rx="2" ry="2.7"/></svg>
   </p>
@@ -609,11 +608,28 @@ footer .date{margin-top:10px;font:500 12px/1 'Jost',sans-serif;letter-spacing:.3
   }
 
   /* ---------- música de fondo (YouTube, con botón flotante) ---------- */
-  var SONG = { id:'9bXJ-czYHnA' };           // <- cambiar acá si eligen otra versión
+  var SONG = { id:'Y0pdQU87dc8' };           // <- cambiar acá si eligen otra versión
   SONG.url = 'https://www.youtube.com/watch?v=' + SONG.id;
   var fallbackLink=document.getElementById('ytFallback'); if(fallbackLink){ fallbackLink.href=SONG.url; }
   var musicWrap=document.getElementById('music'), btn=document.getElementById('musicBtn');
-  var player=null, ready=false, playing=false, failed=false, userPaused=false, loading=false, wantPlay=false, autoTried=false;
+  var player=null, ready=false, playing=false, failed=false, userPaused=false, loading=false, wantPlay=false, autoTried=false, blocked=false, wd=null, hintT=null;
+  var hintEl=document.getElementById('musicHint'), HINT_DEFAULT=hintEl.textContent;
+
+  function showHint(txt,ms){
+    clearTimeout(hintT); hintEl.textContent=txt||HINT_DEFAULT; musicWrap.classList.add('show-hint');
+    hintT=setTimeout(function(){ musicWrap.classList.remove('show-hint'); },ms||6000);
+  }
+  // Si pedimos reproducir y a los 2,5 s no arrancó, el navegador bloqueó el audio: guiamos al reproductor visible.
+  function watch(){
+    clearTimeout(wd);
+    wd=setTimeout(function(){
+      if(!playing && !userPaused && !failed){
+        blocked=true;
+        showHint('Tu celu bloqueó el audio. Tocá otra vez para ir al reproductor y apretá ▶',8000);
+        ui();
+      }
+    },2500);
+  }
 
   function ui(){
     btn.classList.toggle('is-playing',playing);
@@ -622,7 +638,10 @@ footer .date{margin-top:10px;font:500 12px/1 'Jost',sans-serif;letter-spacing:.3
     btn.setAttribute('aria-label',playing?'Pausar música':'Reproducir música');
     if(playing){ musicWrap.classList.remove('show-hint'); }
   }
-  function onError(){ failed=true; playing=false; ui(); }
+  function onError(){
+    failed=true; playing=false; clearTimeout(wd); ui();
+    if(wantPlay){ showHint('No se pudo reproducir acá. Tocá el botón para abrirla en YouTube',8000); }
+  }
   function initPlayer(){
     if(player || !window.YT || !YT.Player) return;
     try{
@@ -630,9 +649,9 @@ footer .date{margin-top:10px;font:500 12px/1 'Jost',sans-serif;letter-spacing:.3
         host:'https://www.youtube-nocookie.com', videoId:SONG.id,
         playerVars:{playsinline:1,rel:0,modestbranding:1,iv_load_policy:3,origin:location.origin},
         events:{
-          onReady:function(){ ready=true; if(wantPlay && !userPaused){ try{ player.playVideo(); }catch(e){} } ui(); },
+          onReady:function(){ ready=true; if(wantPlay && !userPaused){ try{ player.playVideo(); }catch(e){} watch(); } ui(); },
           onStateChange:function(e){
-            if(e.data===1){ playing=true; userPaused=false; }
+            if(e.data===1){ playing=true; userPaused=false; blocked=false; clearTimeout(wd); }
             else if(e.data===2){ playing=false; }
             else if(e.data===0){ try{ player.playVideo(); }catch(x){} }
             ui();
@@ -651,9 +670,14 @@ footer .date{margin-top:10px;font:500 12px/1 'Jost',sans-serif;letter-spacing:.3
   }
   function toggle(){
     if(failed){ window.open(SONG.url,'_blank','noopener'); return; }
-    if(!ready){ wantPlay=true; userPaused=false; loadYT(); return; }
-    if(playing){ userPaused=true; try{ player.pauseVideo(); }catch(e){} }
-    else { userPaused=false; try{ player.playVideo(); }catch(e){} }
+    if(blocked){
+      blocked=false;
+      var c=document.getElementById('cancion'); if(c){ c.scrollIntoView({behavior:'smooth',block:'center'}); }
+      return;
+    }
+    if(!ready){ wantPlay=true; userPaused=false; loadYT(); watch(); return; }
+    if(playing){ userPaused=true; clearTimeout(wd); try{ player.pauseVideo(); }catch(e){} }
+    else { userPaused=false; try{ player.playVideo(); }catch(e){} watch(); }
   }
   btn.addEventListener('click',toggle);
 
@@ -670,7 +694,7 @@ footer .date{margin-top:10px;font:500 12px/1 'Jost',sans-serif;letter-spacing:.3
   // Precarga del reproductor cuando el navegador está libre, y aviso breve del botón.
   var idle = window.requestIdleCallback || function(f){ return setTimeout(f,1200); };
   window.addEventListener('load',function(){ idle(loadYT); });
-  setTimeout(function(){ if(!playing && !userPaused){ musicWrap.classList.add('show-hint'); setTimeout(function(){ musicWrap.classList.remove('show-hint'); },7000); } },2500);
+  setTimeout(function(){ if(!playing && !userPaused && !blocked && !failed){ showHint(HINT_DEFAULT,7000); } },2500);
   ui();
 })();
 </script>
